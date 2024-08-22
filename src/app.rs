@@ -1,6 +1,7 @@
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
+use leptos_router_macro::path;
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -10,13 +11,20 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="leptos" href="/pkg/pasfce.css"/>
         <Link rel="shortcut icon" type_="image/ico" href="/favicon.ico"/>
         
-        <Router>    
+        <Router>  
+            <nav>
+                <A href="/">"Contacts"</A>
+                <A href="/about">"About"</A>
+                <A href="/settings">"Settings"</A>
+            </nav>  
             // here we can define what is going to be seen on all routes
             //TODO: MODALS COME HERE
-
-            <Routes>
-                <Route path="" view=  move || view! { <Home/> }/>
-            </Routes>
+            <main>
+                <Routes fallback=|| "this page could not be found">
+                    <Route path="" view=  move || view! { <Home/> }/>
+                </Routes>
+            </main>
+            
         </Router>
     }
 }
