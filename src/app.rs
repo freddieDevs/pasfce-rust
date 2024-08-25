@@ -1,27 +1,30 @@
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
-use leptos_router_macro::path;
+// use leptos_router_macro::path;
+use crate::routes::root::Root;
 
 #[component]
 pub fn App() -> impl IntoView {
     provide_meta_context();
 
     view! {
-        <Stylesheet id="leptos" href="/pkg/pasfce.css"/>
+        <Stylesheet id="leptos" href="/static/pasfce.css"/>
         <Link rel="shortcut icon" type_="image/ico" href="/favicon.ico"/>
         
         <Router>  
-            <nav>
-                <A href="/">"Contacts"</A>
-                <A href="/about">"About"</A>
-                <A href="/settings">"Settings"</A>
-            </nav>  
+            // we shall see how to implement this inside root only using the A tag
+            // <nav>
+            //     <A href="/">"Contacts"</A>
+            //     <A href="/about">"About"</A>
+            //     <A href="/settings">"Settings"</A>
+            // </nav>  
             // here we can define what is going to be seen on all routes
             //TODO: MODALS COME HERE
             <main>
-                <Routes fallback=|| "this page could not be found">
-                    <Route path="" view=  move || view! { <Home/> }/>
+                <Routes>
+                    <Route path="" view=  move || view! { <Root/> }/>
+                    
                 </Routes>
             </main>
             

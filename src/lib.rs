@@ -2,6 +2,7 @@ pub mod app;
 
 #[cfg(feature = "ssr")]
 pub mod fallback;
+pub mod routes;
 
 #[cfg(feature = "hydrate")]
 #[wasm_bindgen::prelude::wasm_bindgen]
