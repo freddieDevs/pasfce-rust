@@ -2,7 +2,7 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 // use leptos_router_macro::path;
-use crate::routes::root::Root;
+use crate::routes::{root::Root, signin::SigninPage};
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -24,6 +24,7 @@ pub fn App() -> impl IntoView {
             <main>
                 <Routes>
                     <Route path="" view=  move || view! { <Root/> }/>
+                    <Route path= "/signin" view= move || view! {<SigninPage/>} />
                     
                 </Routes>
             </main>

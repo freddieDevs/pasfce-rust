@@ -1,4 +1,5 @@
 use leptos::{component, view, IntoView};
+use leptos_router::Outlet;
 
 #[component]
 pub fn Root() -> impl IntoView {
@@ -11,7 +12,7 @@ pub fn Root() -> impl IntoView {
               <h2 class="hidden md:block text-3xl font-bold tracking-tight lg:text-4xl">
               Passionate Road Traffic Safety and Food Chama Empowerment
               </h2>
-              <h2 class="md:hidden text-4xl font-bold tracking-wide">PAFCE</h2>
+              <h2 class="md:hidden text-4xl font-bold tracking-wide">PASFCE</h2>
             </div>
             <div class="md:hidden">
               "mobile navbar"
@@ -22,7 +23,7 @@ pub fn Root() -> impl IntoView {
               "sidebar"
             </div>
             <div class="flex-1 overflow-y-auto px-6 ">
-              outlet
+              <Outlet/>
             </div>
           </div>
         </div>
