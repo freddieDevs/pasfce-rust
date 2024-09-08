@@ -27,6 +27,8 @@ thiserror = "1"
 tracing = { version = "0.1", optional = true }
 http = "1"
 web-sys= "0.3.70"
+serde = { version = "1.0.210", features = ["derive"]}
+log = "0.4.22"
 
 [features]
 hydrate = ["leptos/hydrate", "leptos_meta/hydrate", "leptos_router/hydrate"]

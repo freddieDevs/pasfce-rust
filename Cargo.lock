@@ -1284,6 +1284,8 @@ dependencies = [
  "leptos_meta",
  "leptos_router",
  "leptos_router_macro",
+ "log",
+ "serde",
  "simple_logger",
  "thiserror",
  "tokio",
