@@ -1,4 +1,3 @@
-mod routes;
 #[cfg(feature = "ssr")]
 #[tokio::main]
 async fn main() {
@@ -27,12 +26,15 @@ async fn main() {
     let app = Router::new()
         .leptos_routes(&leptos_options, routes, App)
         .fallback(file_and_error_handler)
-        .nest_service("/static", get_service(ServeDir::new("target/site/pkg")).handle_error(|error| async move {
-            (
-                axum::http::StatusCode::INTERNAL_SERVER_ERROR,
-                format!("Unhandled internal error: {}", error),
-            )
-        }))
+        .nest_service(
+            "/static",
+            get_service(ServeDir::new("target/site/pkg")).handle_error(|error| async move {
+                (
+                    axum::http::StatusCode::INTERNAL_SERVER_ERROR,
+                    format!("Unhandled internal error: {}", error),
+                )
+            }),
+        )
         .with_state(leptos_options);
 
     // run our app with hyper

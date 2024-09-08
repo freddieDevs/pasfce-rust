@@ -11,24 +11,24 @@ pub fn App() -> impl IntoView {
     view! {
         <Stylesheet id="leptos" href="/static/pasfce.css"/>
         <Link rel="shortcut icon" type_="image/ico" href="/favicon.ico"/>
-        
-        <Router>  
+
+        <Router>
             // we shall see how to implement this inside root only using the A tag
             // <nav>
             //     <A href="/">"Contacts"</A>
             //     <A href="/about">"About"</A>
             //     <A href="/settings">"Settings"</A>
-            // </nav>  
+            // </nav>
             // here we can define what is going to be seen on all routes
             //TODO: MODALS COME HERE
             <main>
                 <Routes>
                     <Route path="" view=  move || view! { <Root/> }/>
                     <Route path= "/signin" view= move || view! {<SigninPage/>} />
-                    
+
                 </Routes>
             </main>
-            
+
         </Router>
     }
 }

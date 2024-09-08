@@ -1,5 +1,6 @@
 pub mod app;
 
+pub mod components;
 #[cfg(feature = "ssr")]
 pub mod fallback;
 pub mod routes;
